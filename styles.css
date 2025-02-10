@@ -279,3 +279,8 @@ footer a {
 footer a:hover {
     color: #FFD700;  
 }
+.carousel-inner img {
+    width: 100%;
+    height: 630px;  
+    object-fit: cover;  
+}
