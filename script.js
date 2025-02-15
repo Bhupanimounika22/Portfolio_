@@ -180,3 +180,36 @@ function showSolution() {
 }
 
 window.onload = generatePuzzle;
+
+
+ 
+    document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+        const root = document.documentElement; // Apply to the root element
+
+        function applyTheme(theme) {
+            if (theme === "dark") {
+                root.classList.add("dark-theme");
+                themeIcon.innerHTML = "☀️"; // Sun icon for light mode
+                themeToggle.innerHTML = '<span id="theme-icon">☀️</span> Switch to Light Mode';
+            } else {
+                root.classList.remove("dark-theme");
+                themeIcon.innerHTML = "🌙"; // Moon icon for dark mode
+                themeToggle.innerHTML = '<span id="theme-icon">🌙</span> Switch to Dark Mode';
+            }
+        }
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+
+        themeToggle.addEventListener("click", function () {
+            const currentTheme = root.classList.contains("dark-theme") ? "light" : "dark";
+            localStorage.setItem("theme", currentTheme);
+            applyTheme(currentTheme);
+        });
+    });
+ 
+
+
