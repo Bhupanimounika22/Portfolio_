@@ -279,8 +279,44 @@ footer a {
 footer a:hover {
     color: #FFD700;  
 }
-.carousel-inner img {
-    width: 100%;
-    height: 630px;  
-    object-fit: cover;  
+ 
+.carousel {
+    max-width: 600px;   
+    height: 300px; /* Set the fixed height */
+    margin: auto;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+.carousel-item {
+    height: 100%; /* Ensures each slide takes full height */
+}
+
+.carousel img {
+    width: 100%;  /* Ensures full width */
+    height: 100%; /* Keeps image inside the container */
+    object-fit: contain; /* Ensures the image is fully visible inside the container */
+    border-radius: 10px;  
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);  
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.custom-carousel-btn {
+    background-color: transparent; 
+    border: none; 
+}
+
+.custom-carousel-btn:hover {
+    background-color: transparent; 
+    border-radius: 50%;  
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);  
 }
