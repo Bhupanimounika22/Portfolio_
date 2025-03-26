@@ -3,100 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhupani Mounika - Portfolio</title>
+    <title>Mounika Bhupani - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
-<body class="d-flex flex-column min-vh-100 ">
- 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top lead">
+<body class="dark-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <div class="brand-circle"></div>
-                Bhupani Mounika
-            </a>
+            <a class="navbar-brand" href="#">Mounika<span class="accent-dot">.</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="resume.html">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="platforms.html">Platforms</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="theme-toggle" class="btn btn-outline-dark">
-                            <span id="theme-icon">🌙</span> Switch to Dark Mode
-                        </button>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats"><i class="fas fa-chart-bar me-1"></i>Stats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-code me-1"></i>Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hackathons"><i class="fas fa-trophy me-1"></i>Hackathons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Contact</a></li>
                 </ul>
             </div>
         </div>
-    </nav> <br> <br> <br> <br> <br> <br>
+    </nav>
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center vh-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Centered Column for Text Content -->
+                <div class="col-md-8 text-center">
+                    <div class="hero-content">
+                        <p class="subtitle animate-on-scroll">
+                            <i class="fas fa-laptop-code me-2"></i>Software Developer
+                        </p>
+                        <h1 class="hero-title animate-on-scroll">
+                            Hello, I'm<br>
+                            <span class="accent-text">Mounika Bhupani</span>
+                        </h1>
+                        <p class="hero-description animate-on-scroll">
+                            I'm an Postgraduate studying Integrated Mtech Cse at VITAP. I can quickly pick up any new skills and adapt to any technologies <br>
+                            Explore || Learn || Work
+                        </p>
+                        <div class="hero-cta animate-on-scroll">
+                            <a href="resume_mounika.pdf" class="btn btn-outline-accent me-3 animate-on-scroll">
+                                <i class="fas fa-download me-2"></i>Download CV
+                            </a>
+                        </div> <br>
+                        <div class="social-links d-flex">
+                            <a href="https://github.com/Bhupanimounika22" class="social-link animate-on-scroll me-3" data-delay="0.1s">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="social-link animate-on-scroll" data-delay="0.2s">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item animate-on-scroll">
+                        <h2 class="stat-number" data-count="23">23</h2>
+                        <p class="stat-text">GitHub<br>Repositories</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item animate-on-scroll">
+                        <h2 class="stat-number" data-count="17">17</h2>
+                        <p class="stat-text">Projects<br>Completed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item animate-on-scroll">
+                        <h2 class="stat-number" data-count="5">5</h2>
+                        <p class="stat-text">Technologies<br>Mastered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item animate-on-scroll">
+                        <h2 class="stat-number" data-count="111">0</h2>
+                        <p class="stat-text">Github<br>commits</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Vellore Institute of Technology AP</h3>
+                        <p><strong>Integrated M.Tech CSE</strong> | Aug 2021 - May 2026</p>
+                        <p>CGPA: 8.54</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Sri Chaitanya College</h3>
+                        <p><strong>M.P.C</strong> | June 2019 - July 2021</p>
+                        <p>Percentage: 96.3%</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Gitams High School</h3>
+                        <p><strong>Schooling</strong> | June 2019 - July 2012</p>
+                        <p>GPA-9.8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
- 
-    <main class="main-content flex-grow-1">
-        <section id="hero" class="min-vh-60 d-flex align-items-center">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center">
-                        <div class="profile-image fly-in">
-                            <img src="images/logo.jpeg?height=400&width=400" alt="Profile" class="img-fluid rounded-circle">
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-code fa-2x mb-3"></i>
+                            <h3 class="skill-title">C++</h3>
+                            <p class="skill-description">Efficient programming for system-level tasks.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 fly-in">
-                        <h1 class="display-1 fw-bold">Hello !</h1>
-                        <h2 class="display-2">A Bit About Me</h2>
-                        <p class="lead">I'm an undergraduate studying Integrated Mtech Cse at VITAP. I can quickly pick up any new skills and  adapt to any technologies. I've experimented with the full stack and currently  curious about GEN AI.</p>
-                        <div class="navigation-circles fade-in-up">
-                            <a href="resume.html" class="circle-link orange">Resume</a>
-                            <a href="projects.html" class="circle-link red">Projects</a>
-                            <a href="contact.html" class="circle-link teal">Contact</a>
-                            <a href="platforms.html" class="circle-link blue">Platforms</a>
-                            
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-java fa-2x mb-3"></i>
+                            <h3 class="skill-title">Java</h3>
+                            <p class="skill-description">Robust applications with object-oriented design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-python fa-2x mb-3"></i>
+                            <h3 class="skill-title">CI/CD</h3>
+                            <p class="skill-description"> Automates integration, testing, and deployment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-database fa-2x mb-3"></i>
+                            <h3 class="skill-title">MySQL</h3>
+                            <p class="skill-description">Structured data management with SQL.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-database fa-2x mb-3"></i>
+                            <h3 class="skill-title">MongoDB</h3>
+                            <p class="skill-description">Flexible NoSQL database solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-code-branch fa-2x mb-3"></i>
+                            <h3 class="skill-title">Express.js</h3>
+                            <p class="skill-description">Building efficient APIs and back-end logic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-code fa-2x mb-3"></i>
+                            <h3 class="skill-title">ReactJS</h3>
+                            <p class="skill-description">Dynamic and responsive front-end interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-server fa-2x mb-3"></i>
+                            <h3 class="skill-title">Node.js</h3>
+                            <p class="skill-description">Scalable server-side JavaScript applications.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-content">
+                            <i class="fas fa-tools fa-2x mb-3"></i>
+                            <h3 class="skill-title">Git</h3>
+                            <p class="skill-description">Version control and collaborative development.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main> <br>
-
- 
-<footer class="bg-dark text-white py-4 lead">
-    <div class="container text-center">
-        <p>&copy; 2024 Bhupani Mounika. All rights reserved.</p>
-        <div>
-            <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="text-white me-3" target="_blank">
-                <i class="fab fa-linkedin"></i>  
-            </a>
-            <a href="https://github.com/Bhupanimounika22" class="text-white me-3" target="_blank">
-                <i class="fab fa-github"></i> 
-            </a>
-            <a href="https://x.com/BhupaniMounika" class="text-white" target="_blank">
-                <i class="fab fa-twitter"></i>  
-            </a>
         </div>
-    </div>
-</footer>
-
-
+    </section>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Projects</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header d-flex justify-content-between align-items-center">
+                            <h3>Automated Bus Scheduling</h3>
+                            <a href="https://github.com/Bhupanimounika22/automated_bus_scheduling" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Automated bus scheduling system with MVC architecture, improving on-time arrivals by 15% and reducing conflicts by 50%.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Node.js</span>
+                                <span class="badge">Express.js</span>
+                                <span class="badge">MongoDB</span>
+                                <span class="badge">CSS</span>
+                                <span class="badge">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header d-flex justify-content-between align-items-center">
+                            <h3>Wealth Management Solution</h3>
+                            <a href="https://github.com/Bhupanimounika22/wealth-management-solutions" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Financial tracking with Google Sign-Up, reducing login time by 60% and enhancing onboarding by 35%.</p>
+                            <div class="tech-stack">
+                                <span class="badge">ReactJS</span>
+                                <span class="badge">Node.js</span>
+                                <span class="badge">Firebase</span>
+                                <span class="badge">Chart.js</span>
+                                <span class="badge">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header d-flex justify-content-between align-items-center">
+                            <h3>Malware Classification</h3>
+                            <a href="https://github.com/mounika" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Deep learning-based malware detection with 99% accuracy using ResNet50 on the Maling dataset.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Python</span>
+                                <span class="badge">TensorFlow</span>
+                                <span class="badge">PyTorch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header d-flex justify-content-between align-items-center">
+                            <h3>Medicinal Plants Identification</h3>
+                            <a href="https://github.com/Bhupanimounika22/Identification-of-Different-Medicinal-Plants-Through-Image-Processing" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Image recognition system for medicinal plants with 95% accuracy using a custom CNN model.</p>
+                            <div class="tech-stack">
+                                <span class="badge">ReactJS</span>
+                                <span class="badge">Flask</span>
+                                <span class="badge">Bootstrap</span>
+                                <span class="badge">CNN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header d-flex justify-content-between align-items-center">
+                            <h3>Job Portal Application</h3>
+                            <a href="https://github.com/Bhupanimounika22/job-portal" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">Job portal reducing search time by 50% and streamlining employer-job seeker connections.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Node.js</span>
+                                <span class="badge">Express.js</span>
+                                <span class="badge">MongoDB</span>
+                                <span class="badge">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    <section id="hackathons" class="hackathons-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Hackathons</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5 mb-4">
+                    <div class="hackathon-card animate-on-scroll">
+                        <div class="hackathon-header">
+                            <h3>Great India Hackfest 2024</h3>
+                            <span class="ranking-badge">4th Place</span>
+                        </div>
+                        <div class="hackathon-body">
+                            <p class="hackathon-details"><i class="fas fa-calendar-alt me-2"></i>9th March 2024</p>
+                            <p class="hackathon-details"><i class="fas fa-university me-2"></i>CSI Chapter VIT-AP</p>
+                            <p class="hackathon-description">Competed in a 24-hour hackathon, showcasing innovation and teamwork.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 mb-4">
+                    <div class="hackathon-card animate-on-scroll">
+                        <div class="hackathon-header">
+                            <h3>National-Level Hackathon</h3>
+                            <span class="ranking-badge">2nd Place</span>
+                        </div>
+                        <div class="hackathon-body">
+                            <p class="hackathon-details"><i class="fas fa-calendar-alt me-2"></i>13th December 2024</p>
+                            <p class="hackathon-details"><i class="fas fa-university me-2"></i>NRI Institute of Technology</p>
+                            <p class="hackathon-description">Achieved top-tier placement in a competitive coding and problem-solving event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <div class="container text-center">
+            <h2 class="mb-5 animate-on-scroll">Get in Touch</h2>
+            <div class="contact-content animate-on-scroll">
+                <p class="contact-email"><i class="fas fa-envelope me-2"></i>bhupanimounika123@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://github.com/Bhupanimounika22" class="social-link animate-on-scroll" data-delay="0.1s">
+                        <i class="fab fa-github"></i>
+                        <span class="social-label">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="social-link animate-on-scroll" data-delay="0.2s">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="social-label">LinkedIn</span>
+                    </a>
+                </div>
+                <p class="contact-note animate-on-scroll" data-delay="0.3s">Feel free to reach out for collaborations or inquiries!</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="footer-text">&copy; 2025 Mounika Bhupani. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#projects" class="footer-link">Projects</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js">
-        
-        
-    </script>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".stat-number");
+        const speed = 200; // Adjust speed of counting (lower = faster)
+
+        const countUp = (counter) => {
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-count");
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed); // Increment step
+                
+                if (count < target) {
+                    counter.innerText = count + increment;
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        };
+
+        // Using Intersection Observer to start counting when stats section is in view
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    });
+</script>
 </body>
 </html>
