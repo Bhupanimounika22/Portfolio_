@@ -12,7 +12,6 @@ body.dark-theme {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Navbar */
 .navbar {
     background: var(--darker-bg);
     padding: 1.2rem 0;
@@ -38,8 +37,6 @@ body.dark-theme {
     -webkit-background-clip: text;
     color: transparent !important;
 }
-
-/* Hero Section */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -108,8 +105,6 @@ body.dark-theme {
     color: #4fffb0;
     transform: scale(1.2);
 }
-
-/* Stats Section */
 .stats-section {
     padding: 60px 0;
     background: var(--dark-bg);
@@ -144,8 +139,6 @@ body.dark-theme {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-/* Skills Section */
 .skills-section {
     padding: 80px 0;
     background: var(--darker-bg);
@@ -204,7 +197,6 @@ body.dark-theme {
     color: var(--text-muted);
     margin: 0;
 }
-/* Education Section */
 .education-section {
     padding: 80px 0;
     background: var(--dark-bg);
@@ -295,17 +287,11 @@ body.dark-theme {
     background: var(--accent-color);
     transform: translateX(-50%) scale(1.2);
 }
-
-/* Animation Classes */
 .animate-on-scroll.is-visible.timeline-item {
     animation: fadeIn 1s ease-in-out forwards;
 }
-
-/* Staggered Delays */
 .timeline-item:nth-child(1) { animation-delay: 0.2s; }
 .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-
-/* Responsive */
 @media (max-width: 767.98px) {
     .timeline::before {
         left: 20px;
@@ -332,8 +318,6 @@ body.dark-theme {
         margin-left: 40px;
     }
 }
-
-/* Projects Section */
 .projects-section {
     padding: 80px 0;
     background: var(--dark-bg);
@@ -436,20 +420,14 @@ body.dark-theme {
     color: var(--dark-bg);
     transform: scale(1.05);
 }
-
-/* Animation Classes */
 .animate-on-scroll.is-visible.project-card {
     animation: fadeIn 1s ease-in-out forwards;
 }
-
-/* Staggered Delays */
 .project-card:nth-child(1) { animation-delay: 0.2s; }
 .project-card:nth-child(2) { animation-delay: 0.4s; }
 .project-card:nth-child(3) { animation-delay: 0.6s; }
 .project-card:nth-child(4) { animation-delay: 0.8s; }
 .project-card:nth-child(5) { animation-delay: 1.0s; }
-
-/* Responsive */
 @media (max-width: 991.98px) {
     .project-link {
         font-size: 1.3rem;
@@ -475,7 +453,6 @@ body.dark-theme {
         padding: 3px 6px;
     }
 }
-/* Hackathons Section */
 .hackathons-section {
     padding: 80px 0;
     background: var(--dark-bg);
@@ -589,17 +566,11 @@ body.dark-theme {
     line-height: 1.6;
     margin: 0;
 }
-
-/* Animation Classes */
 .animate-on-scroll.is-visible.hackathon-card {
     animation: fadeIn 1s ease-in-out forwards;
 }
-
-/* Staggered Delays */
 .hackathon-card:nth-child(1) { animation-delay: 0.2s; }
 .hackathon-card:nth-child(2) { animation-delay: 0.4s; }
-
-/* Responsive */
 @media (max-width: 991.98px) {
     .hackathon-header h3 {
         font-size: 1.3rem;
@@ -631,7 +602,6 @@ body.dark-theme {
         font-size: 0.85rem;
     }
 }
-/* Contact Section */
 .contact-section {
     padding: 80px 0;
     background: var(--darker-bg);
@@ -734,7 +704,6 @@ body.dark-theme {
     font-style: italic;
 }
 
-/* Animation Classes */
 .animate-on-scroll.is-visible.contact-content {
     animation: fadeIn 1s ease-in-out forwards;
 }
@@ -743,7 +712,6 @@ body.dark-theme {
     animation: bounceIn 0.8s ease-out forwards;
 }
 
-/* Footer Section */
 .footer-section {
     background: var(--dark-bg);
     padding: 20px 0;
@@ -778,8 +746,7 @@ body.dark-theme {
     -webkit-background-clip: text;
     color: transparent;
 }
-
-/* Responsive */
+ 
 @media (max-width: 991.98px) {
     .contact-content {
         padding: 30px;
@@ -816,7 +783,7 @@ body.dark-theme {
         gap: 10px;
     }
 }
-/* Animation Classes */
+ 
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.1s ease;
@@ -849,8 +816,7 @@ body.dark-theme {
 .animate-on-scroll.is-visible.project-card {
     animation: fadeIn 1s ease-in-out forwards;
 }
-
-/* Animation Keyframes */
+ 
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -872,7 +838,7 @@ body.dark-theme {
     100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Staggered Delays */
+ 
 .hero-content .animate-on-scroll:nth-child(1) { animation-delay: 0.2s; }
 .hero-content .animate-on-scroll:nth-child(2) { animation-delay: 0.5s; }
 .hero-content .animate-on-scroll:nth-child(3) { animation-delay: 1s; }
@@ -896,7 +862,7 @@ body.dark-theme {
 .project-card:nth-child(4) { animation-delay: 0.8s; }
 .project-card:nth-child(5) { animation-delay: 1.0s; }
 
-/* Responsive */
+ 
 @media (max-width: 991.98px) {
     .hero-title { font-size: 3rem; }
     .stat-number { font-size: 2.5rem; }
