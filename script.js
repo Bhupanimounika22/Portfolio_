@@ -1,11 +1,10 @@
-// Navbar scroll effect
+ 
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     navbar.style.background = window.scrollY > 50 ? '#1a1a1a' : 'transparent';
     navbar.style.boxShadow = window.scrollY > 50 ? '0 2px 15px rgba(0,0,0,0.3)' : 'none';
 });
-
-// Smooth scroll
+ 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -14,8 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Intersection Observer for all sections
+ 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const elements = entry.target.querySelectorAll('.animate-on-scroll');
@@ -25,12 +23,11 @@ const observer = new IntersectionObserver((entries) => {
                 el.classList.add('is-visible');
                 const delay = el.getAttribute('data-delay') || '0s';
                 el.style.animationDelay = delay;
-
-                // Stats count-up
+ 
                 if (el.classList.contains('stat-number')) {
                     const target = parseInt(el.getAttribute('data-count'));
                     let current = 0;
-                    const duration = 1500; // Total duration in ms
+                    const duration = 1500; 
                     const startTime = performance.now();
 
                     const updateCount = (timestamp) => {
@@ -45,7 +42,7 @@ const observer = new IntersectionObserver((entries) => {
                         }
                     };
 
-                    el.textContent = '0'; // Reset to 0 before starting
+                    el.textContent = '0'; 
                     requestAnimationFrame(updateCount);
                 }
             });
@@ -54,7 +51,7 @@ const observer = new IntersectionObserver((entries) => {
                 el.classList.remove('is-visible');
                 el.style.animationDelay = '0s';
 
-                // Reset stats
+   
                 if (el.classList.contains('stat-number')) {
                     el.textContent = '0';
                 }
@@ -63,7 +60,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.3 });
 
-// Observe all sections
+ 
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });

@@ -401,13 +401,13 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const counters = document.querySelectorAll(".stat-number");
-        const speed = 200; // Adjust speed of counting (lower = faster)
+        const speed = 200; 
 
         const countUp = (counter) => {
             const updateCount = () => {
                 const target = +counter.getAttribute("data-count");
                 const count = +counter.innerText;
-                const increment = Math.ceil(target / speed); // Increment step
+                const increment = Math.ceil(target / speed);  
                 
                 if (count < target) {
                     counter.innerText = count + increment;
@@ -419,12 +419,12 @@
             updateCount();
         };
 
-        // Using Intersection Observer to start counting when stats section is in view
+       
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     countUp(entry.target);
-                    observer.unobserve(entry.target); // Stop observing after animation
+                    observer.unobserve(entry.target);  
                 }
             });
         }, { threshold: 0.5 });
