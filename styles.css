@@ -381,13 +381,18 @@ body.dark-theme {
     font-size: 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    pointer-events: auto !important; /* Ensures link is clickable */
+    cursor: pointer; /* Shows pointer on hover */
 }
 
-.project-link:hover {
-    background: var(--accent-color);
-    -webkit-background-clip: text;
-    color: transparent;
+.project-link {
+    position: relative;
+    z-index: 10; /* Ensures it’s above other elements */
 }
+.project-link i {
+    pointer-events: auto !important;
+}
+
 
 .project-body {
     padding: 20px;
