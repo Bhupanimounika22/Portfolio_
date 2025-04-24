@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     
 </head>
 <body class="dark-theme">
@@ -78,17 +78,21 @@
                                 <span class="terminal-command">ls -la contact/</span>
                             </div>
                             <div class="terminal-output social-links-container" data-aos="fade-up" data-aos-delay="600">
-                                <div class="hero-cta">
-                                    <a href="resume_mounika.pdf" class="btn btn-outline-accent me-3">
-                                        <i class="fas fa-download me-2"></i>resume_mounika.pdf
-                                    </a>
+                                <div class="terminal-command-output">
+                                    <span class="terminal-command-line">$ file resume_mounika.pdf</span>
+                                    <div class="terminal-result">
+                                        <span class="file-info">resume_mounika.pdf: PDF document, version 1.7</span>
+                                        <a href="resume_mounika.pdf" class="terminal-file resume-file">
+                                            <i class="fas fa-file-pdf"></i> <span class="file-name">resume_mounika.pdf</span> <span class="file-size">215KB</span> <span class="file-permission">-rw-r--r--</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="social-links d-flex justify-content-center mt-3">
-                                    <a href="https://github.com/Bhupanimounika22" class="social-link me-3">
-                                        <i class="fab fa-github"></i> github
+                                <div class="terminal-file-list mt-3">
+                                    <a href="https://github.com/Bhupanimounika22" class="terminal-file github-file">
+                                        <i class="fab fa-github"></i> <span class="file-name">github.profile</span> <span class="file-permission">-rw-r--r--</span>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="social-link">
-                                        <i class="fab fa-linkedin"></i> linkedin
+                                    <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="terminal-file linkedin-file">
+                                        <i class="fab fa-linkedin"></i> <span class="file-name">linkedin.profile</span> <span class="file-permission">-rw-r--r--</span>
                                     </a>
                                 </div>
                             </div>
@@ -580,34 +584,55 @@
             }, 1000);
         }
         
-        // Stats counter animation
+        // Stats counter animation with improved dynamics
         const counters = document.querySelectorAll(".stat-number");
-        const speed = 200; 
-
+        
         const countUp = (counter) => {
+            const target = +counter.getAttribute("data-count");
+            const duration = 2000; // ms
+            const frameDuration = 1000 / 60; // 60fps
+            const totalFrames = Math.round(duration / frameDuration);
+            
+            let frame = 0;
+            
+            // Use easeOutExpo for a more natural counting effect
+            const easeOutExpo = t => (t === 1) ? 1 : 1 - Math.pow(2, -10 * t);
+            
             const updateCount = () => {
-                const target = +counter.getAttribute("data-count");
-                const count = +counter.innerText;
-                const increment = Math.ceil(target / speed);  
+                frame++;
+                const progress = easeOutExpo(frame / totalFrames);
+                const currentCount = Math.round(target * progress);
                 
-                if (count < target) {
-                    counter.innerText = count + increment;
-                    setTimeout(updateCount, 50);
+                counter.textContent = currentCount;
+                
+                if (frame < totalFrames) {
+                    requestAnimationFrame(updateCount);
                 } else {
-                    counter.innerText = target;
+                    counter.textContent = target;
+                    
+                    // Add a blinking effect when counter finishes
+                    counter.classList.add('count-complete');
+                    setTimeout(() => {
+                        counter.classList.remove('count-complete');
+                    }, 1000);
                 }
             };
-            updateCount();
+            
+            requestAnimationFrame(updateCount);
         };
        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    countUp(entry.target);
+                    // Add a staggered delay for each counter
+                    const delay = Array.from(counters).indexOf(entry.target) * 200;
+                    setTimeout(() => {
+                        countUp(entry.target);
+                    }, delay);
                     observer.unobserve(entry.target);  
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
 
         counters.forEach(counter => {
             observer.observe(counter);
@@ -643,5 +668,6 @@
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="terminal.js"></script>
 </body>
 </html>
