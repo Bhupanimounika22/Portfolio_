@@ -546,34 +546,54 @@
             }, 1000);
         }
         
-        // Stats counter animation
+        // Stats counter animation with typing effect
         const counters = document.querySelectorAll(".stat-number");
-        const speed = 200; 
-
+        
         const countUp = (counter) => {
+            const target = +counter.getAttribute("data-count");
+            let count = 0;
+            
+            // Add blinking cursor during counting
+            counter.innerHTML = '0<span class="cursor">|</span>';
+            
+            // Random speed between updates to simulate typing
+            const randomSpeed = () => Math.floor(Math.random() * 100) + 50;
+            
             const updateCount = () => {
-                const target = +counter.getAttribute("data-count");
-                const count = +counter.innerText;
-                const increment = Math.ceil(target / speed);  
+                // Calculate a random increment between 1 and 5
+                const increment = Math.floor(Math.random() * 5) + 1;
                 
                 if (count < target) {
-                    counter.innerText = count + increment;
-                    setTimeout(updateCount, 50);
+                    count = Math.min(count + increment, target);
+                    counter.innerHTML = count + '<span class="cursor">|</span>';
+                    
+                    // Add random delay between updates
+                    setTimeout(updateCount, randomSpeed());
                 } else {
-                    counter.innerText = target;
+                    // Remove cursor when done
+                    counter.textContent = target;
+                    
+                    // Add glowing effect when counting is complete
+                    counter.classList.add('stat-complete');
                 }
             };
-            updateCount();
+            
+            // Start with a slight delay
+            setTimeout(updateCount, 300);
         };
        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    countUp(entry.target);
+                    // Add a staggered delay for each counter
+                    const delay = Array.from(counters).indexOf(entry.target) * 200;
+                    setTimeout(() => {
+                        countUp(entry.target);
+                    }, delay);
                     observer.unobserve(entry.target);  
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
 
         counters.forEach(counter => {
             observer.observe(counter);

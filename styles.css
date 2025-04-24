@@ -418,17 +418,28 @@ body.dark-theme {
     margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(79, 255, 176, 0.5);
+}
+
+.stat-number::before {
+    content: '<';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    font-size: 2rem;
+    opacity: 0.5;
+    color: var(--accent-solid);
 }
 
 .stat-number::after {
-    content: '';
+    content: '/>';
     position: absolute;
+    right: -30px;
     bottom: 0;
-    left: 50%;
-    width: 30px;
-    height: 2px;
-    background: var(--accent-color);
-    transform: translateX(-50%);
+    font-size: 2rem;
+    opacity: 0.5;
+    color: var(--accent-solid);
 }
 
 .stat-text {
@@ -439,6 +450,48 @@ body.dark-theme {
     letter-spacing: 2px;
     font-weight: 600;
     margin-top: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* Cursor animation for stats */
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--accent-solid);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.stat-complete {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgba(79, 255, 176, 0.5); }
+    to { text-shadow: 0 0 20px rgba(79, 255, 176, 0.8), 0 0 30px rgba(0, 221, 235, 0.6); }
+}
+
+/* Code-like decoration for stats */
+.stat-item::after {
+    content: '}';
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-family: 'Courier New', monospace;
+    color: rgba(79, 255, 176, 0.2);
+    font-size: 2rem;
+}
+
+.stat-item::before {
+    content: '{';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-family: 'Courier New', monospace;
+    color: rgba(79, 255, 176, 0.2);
+    font-size: 2rem;
 }
 .skills-section {
     padding: 100px 0;
@@ -907,10 +960,17 @@ body.dark-theme {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.5rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    pointer-events: auto !important; /* Ensures link is clickable */
-    cursor: pointer; /* Shows pointer on hover */
+    transition: var(--transition-fast);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(79, 255, 176, 0.1);
+    pointer-events: auto !important;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
 }
 
 .project-link {
@@ -919,39 +979,127 @@ body.dark-theme {
 }
 .project-link i {
     pointer-events: auto !important;
+    transition: var(--transition-fast);
 }
 
+.project-link:hover {
+    background: var(--accent-color);
+    transform: rotate(360deg);
+    box-shadow: 0 0 15px rgba(79, 255, 176, 0.5);
+}
+
+.project-link:hover i {
+    color: var(--dark-bg);
+}
+
+.project-link::before {
+    content: 'git';
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: var(--transition-fast);
+    color: var(--accent-solid);
+}
+
+.project-link:hover::before {
+    opacity: 1;
+    bottom: -25px;
+}
 
 .project-body {
-    padding: 20px;
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(15, 15, 15, 0.8));
+}
+
+.project-body::before {
+    content: '/* code */';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-family: 'Courier New', monospace;
+    color: rgba(79, 255, 176, 0.2);
+    font-size: 0.8rem;
 }
 
 .project-description {
     color: var(--text-muted);
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    padding-left: 15px;
+}
+
+.project-description::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    color: var(--accent-solid);
+    opacity: 0.7;
 }
 
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    margin-top: auto;
+    position: relative;
+    padding-top: 15px;
+}
+
+.tech-stack::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(79, 255, 176, 0.2), transparent);
 }
 
 .badge {
     background: rgba(79, 255, 176, 0.1);
-    color: #4fffb0;
+    color: var(--accent-solid);
     font-size: 0.85rem;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: var(--transition-fast);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 255, 176, 0.2), transparent);
+    transition: var(--transition-fast);
 }
 
 .badge:hover {
-    background: #4fffb0;
+    background: var(--accent-color);
     color: var(--dark-bg);
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(79, 255, 176, 0.3);
+}
+
+.badge:hover::before {
+    left: 100%;
+    transition: 0.7s;
 }
 .animate-on-scroll.is-visible.project-card {
     animation: fadeIn 1s ease-in-out forwards;
