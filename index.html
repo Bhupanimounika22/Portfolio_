@@ -37,36 +37,70 @@
     <section id="home" class="hero-section d-flex align-items-center justify-content-center vh-100">
         <div class="container">
             <div class="row justify-content-center">
-                <!-- Centered Column for Text Content -->
-                <div class="col-md-8 text-center">
-                    <div class="hero-content">
-                        <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-laptop-code me-2"></i>Software Developer
-                        </p>
-                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-                            Hello, I'm<br>
-                            <span class="accent-text typewriter">Mounika Bhupani</span>
-                        </h1>
-                        <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
-                            I'm a Postgraduate studying Integrated MTech CSE at VITAP. I can quickly pick up any new skills and adapt to any technologies <br>
-                            <span class="changing-text">Explore</span> || <span class="changing-text">Learn</span> || <span class="changing-text">Work</span>
-                        </p>
-                        <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
-                            <a href="resume_mounika.pdf" class="btn btn-outline-accent me-3 animate__animated animate__pulse animate__infinite animate__slower">
-                                <i class="fas fa-download me-2"></i>Download CV
-                            </a>
-                        </div> <br>
-                        <div class="social-links d-flex justify-content-center">
-                            <a href="https://github.com/Bhupanimounika22" class="social-link me-3" data-aos="zoom-in" data-aos-delay="500">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="social-link" data-aos="zoom-in" data-aos-delay="600">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
+                <div class="col-lg-10 col-md-12">
+                    <div class="terminal-window" data-aos="fade-up">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button close"></span>
+                                <span class="terminal-button minimize"></span>
+                                <span class="terminal-button maximize"></span>
+                            </div>
+                            <div class="terminal-title">mounika@developer: ~/portfolio</div>
                         </div>
-                        
+                        <div class="terminal-body">
+                            <div class="terminal-line" data-aos="fade-up" data-aos-delay="100">
+                                <span class="terminal-prompt">mounika@developer:~$</span> 
+                                <span class="terminal-command">whoami</span>
+                            </div>
+                            <div class="terminal-output" data-aos="fade-up" data-aos-delay="200">
+                                <p class="subtitle">
+                                    <i class="fas fa-laptop-code me-2"></i>Software Developer
+                                </p>
+                                <h1 class="hero-title">
+                                    Hello, I'm<br>
+                                    <span class="accent-text typewriter">Mounika Bhupani</span>
+                                </h1>
+                            </div>
+                            
+                            <div class="terminal-line" data-aos="fade-up" data-aos-delay="300">
+                                <span class="terminal-prompt">mounika@developer:~$</span> 
+                                <span class="terminal-command">cat about.txt</span>
+                            </div>
+                            <div class="terminal-output" data-aos="fade-up" data-aos-delay="400">
+                                <p class="hero-description">
+                                    I'm a Postgraduate studying Integrated MTech CSE at VITAP. I can quickly pick up any new skills and adapt to any technologies <br>
+                                    <span class="changing-text">Explore</span> || <span class="changing-text">Learn</span> || <span class="changing-text">Work</span>
+                                </p>
+                            </div>
+                            
+                            <div class="terminal-line" data-aos="fade-up" data-aos-delay="500">
+                                <span class="terminal-prompt">mounika@developer:~$</span> 
+                                <span class="terminal-command">ls -la contact/</span>
+                            </div>
+                            <div class="terminal-output social-links-container" data-aos="fade-up" data-aos-delay="600">
+                                <div class="hero-cta">
+                                    <a href="resume_mounika.pdf" class="btn btn-outline-accent me-3">
+                                        <i class="fas fa-download me-2"></i>resume_mounika.pdf
+                                    </a>
+                                </div>
+                                <div class="social-links d-flex justify-content-center mt-3">
+                                    <a href="https://github.com/Bhupanimounika22" class="social-link me-3">
+                                        <i class="fab fa-github"></i> github
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/bhupani-mounika-a97388243" class="social-link">
+                                        <i class="fab fa-linkedin"></i> linkedin
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-line typing-effect" data-aos="fade-up" data-aos-delay="700">
+                                <span class="terminal-prompt">mounika@developer:~$</span> 
+                                <span class="terminal-command typing"></span>
+                                <span class="cursor">█</span>
+                            </div>
+                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="scroll-down-indicator">
@@ -546,54 +580,34 @@
             }, 1000);
         }
         
-        // Stats counter animation with typing effect
+        // Stats counter animation
         const counters = document.querySelectorAll(".stat-number");
-        
+        const speed = 200; 
+
         const countUp = (counter) => {
-            const target = +counter.getAttribute("data-count");
-            let count = 0;
-            
-            // Add blinking cursor during counting
-            counter.innerHTML = '0<span class="cursor">|</span>';
-            
-            // Random speed between updates to simulate typing
-            const randomSpeed = () => Math.floor(Math.random() * 100) + 50;
-            
             const updateCount = () => {
-                // Calculate a random increment between 1 and 5
-                const increment = Math.floor(Math.random() * 5) + 1;
+                const target = +counter.getAttribute("data-count");
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);  
                 
                 if (count < target) {
-                    count = Math.min(count + increment, target);
-                    counter.innerHTML = count + '<span class="cursor">|</span>';
-                    
-                    // Add random delay between updates
-                    setTimeout(updateCount, randomSpeed());
+                    counter.innerText = count + increment;
+                    setTimeout(updateCount, 50);
                 } else {
-                    // Remove cursor when done
-                    counter.textContent = target;
-                    
-                    // Add glowing effect when counting is complete
-                    counter.classList.add('stat-complete');
+                    counter.innerText = target;
                 }
             };
-            
-            // Start with a slight delay
-            setTimeout(updateCount, 300);
+            updateCount();
         };
        
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add a staggered delay for each counter
-                    const delay = Array.from(counters).indexOf(entry.target) * 200;
-                    setTimeout(() => {
-                        countUp(entry.target);
-                    }, delay);
+                    countUp(entry.target);
                     observer.unobserve(entry.target);  
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.5 });
 
         counters.forEach(counter => {
             observer.observe(counter);
@@ -628,5 +642,6 @@
         }
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
